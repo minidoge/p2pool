@@ -16,7 +16,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             (yield bitcoind.rpc_getblockchaininfo())['chain'] != 'test'
         ))
 SUBSIDY_FUNC = lambda height: 32*100000000 >> (height + 1)//2592000
-POW_FUNC = lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data))
+POW_FUNC = lambda data: pack.IntType(256).unpack(__import__('minu_scrypt').getPoWHash(data))
 BLOCK_PERIOD = 12 # s
 SYMBOL = 'FST'
 CONF_FILE_FUNC = lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'Fastcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Fastcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.fastcoin'), 'fastcoin.conf')

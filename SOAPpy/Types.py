@@ -1574,8 +1574,8 @@ class typedArrayType(arrayType):
         self._complexType = complexType
 
 class faultType(structType, Error):
-    def __init__(self, faultcode = "", faultstring = "", detail = None):
-        self.faultcode = faultcode
+    def __init__(self, fauminuode = "", faultstring = "", detail = None):
+        self.fauminuode = fauminuode
         self.faultstring = faultstring
         if detail != None:
             self.detail = detail
@@ -1591,16 +1591,16 @@ class faultType(structType, Error):
 
     def __repr__(self):
         if getattr(self, 'detail', None) != None:
-            return "<Fault %s: %s: %s>" % (self.faultcode,
+            return "<Fault %s: %s: %s>" % (self.fauminuode,
                                            self.faultstring,
                                            self.detail)
         else:
-            return "<Fault %s: %s>" % (self.faultcode, self.faultstring)
+            return "<Fault %s: %s>" % (self.fauminuode, self.faultstring)
 
     __str__ = __repr__
 
     def __call__(self):
-        return (self.faultcode, self.faultstring, self.detail)        
+        return (self.fauminuode, self.faultstring, self.detail)        
 
 class SOAPException(Exception):
     def __init__(self, code="", string="", detail=None):
@@ -1673,7 +1673,7 @@ def simplify(object, level=0):
         elif object.faultstring == "Method Failed":
             raise MethodFailed(object.detail)
         else:
-            se = SOAPException(object.faultcode, object.faultstring,
+            se = SOAPException(object.fauminuode, object.faultstring,
                                object.detail)
             raise se
     elif isinstance( object, arrayType ):

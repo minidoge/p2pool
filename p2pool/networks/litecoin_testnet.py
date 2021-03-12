@@ -1,6 +1,6 @@
 from p2pool.bitcoin import networks
 
-PARENT = networks.nets['litecoin_testnet']
+PARENT = networks.nets['minidoge_testnet']
 SHARE_PERIOD = 4 # seconds
 CHAIN_LENGTH = 20*60//3 # shares
 REAL_CHAIN_LENGTH = 20*60//3 # shares

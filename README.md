@@ -47,16 +47,16 @@ Alternate web frontend:
 -------------------------
 * https://github.com/hardcpp/P2PoolExtendedFrontEnd
 
-Notes for Litecoin:
+Notes for minidoge:
 =========================
 Requirements:
 -------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
-ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
+In order to run P2Pool with the minidoge network, you would need to build and install the
+minu_scrypt module that includes the scrypt proof of work code that minidoge uses for hashes.
 
 Linux:
 
-    cd litecoin_scrypt
+    cd minidoge_scrypt
     sudo python setup.py install
 
 Windows (mingw):
@@ -65,7 +65,7 @@ Windows (mingw):
 
 In bash type this:
 
-    cd litecoin_scrypt
+    cd minidoge_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 
 Windows (Microsoft Visual C++)
@@ -75,7 +75,7 @@ In bash type this:
 
     SET VS90COMNTOOLS=%VS110COMNTOOLS%	           # For visual c++ 2012
     SET VS90COMNTOOLS=%VS100COMNTOOLS%             # For visual c++ 2010
-    cd litecoin_scrypt
+    cd minidoge_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 	
 If you run into an error with unrecognized command line option '-mno-cygwin', see this:
@@ -83,13 +83,13 @@ http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produ
 
 Running P2Pool:
 -------------------------
-Run P2Pool with the "--net litecoin" option.
+Run P2Pool with the "--net minidoge" option.
 Run your miner program, connecting to 127.0.0.1 on port 9327.
 Forward port 9338 to the host running P2Pool.
 
-Litecoin's use of ports 9333 and 9332 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to litecoin.conf
-and restart litecoind:
+minidoge's use of ports 9333 and 9332 conflicts with P2Pool running on
+the Bitcoin network. To avoid problems, add these lines to minidoge.conf
+and restart minidoged:
 
     rpcport=10332
     port=10333
@@ -99,7 +99,7 @@ Sponsors:
 
 Thanks to:
 * The Bitcoin Foundation for its generous support of P2Pool
-* The Litecoin Project for its generous donations to P2Pool
+* The minidoge Project for its generous donations to P2Pool
  
 License:
 -------------------------
